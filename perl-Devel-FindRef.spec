@@ -9,7 +9,7 @@ Summary:	Devel::FindRef - where is that reference to my variable hiding?
 Summary(pl.UTF-8):	Devel::FindRef - znajduje referecje do zmiennych
 Name:		perl-Devel-FindRef
 Version:	1.422
-Release:	1
+Release:	2
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://ftp.man.poznan.pl/pub/CPAN/authors/id/M/ML/MLEHMANN/%{pdir}-%{pnam}-%{version}.tar.gz
