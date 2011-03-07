@@ -6,17 +6,21 @@
 %define	pdir	Devel
 %define	pnam	FindRef
 Summary:	Devel::FindRef - where is that reference to my variable hiding?
-Summary(pl.UTF-8):	Devel::FindRef - znajduje referecje do zmiennych
+Summary(pl.UTF-8):	Devel::FindRef - znajdowanie referecji do zmiennych
 Name:		perl-Devel-FindRef
 Version:	1.422
 Release:	2
-License:	unknown
+# same as perl 5.8.8 or later perl 5
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://ftp.man.poznan.pl/pub/CPAN/authors/id/M/ML/MLEHMANN/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Devel/MLEHMANN/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	2c92401767653f1ba8b98f36f23fae8d
 URL:		http://search.cpan.org/dist/Devel-FindRef/
-BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl-common-sense
+%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,8 +32,15 @@ tracking references "backwards" is usually possible.
 The track function can help track down some of those references back
 to the variables containing them.
 
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+Śledzenie problemów z referencjami (np. kiedy oczekujemy, że obiekt
+zostanie zniszczony, ale jeszcze istnieją referencje do niego, więc
+jest utrzymywany) może być bardzo trudne. Na szczęście perl trzyma
+ślady wszystkich ich wartości, więc zwykle można wyśledzić referencje
+"wstecznie".
+
+Funkcja track pozwala prześledzić referencje wstecz do zmiennych je
+zawierających.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -54,9 +65,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README
-%{perl_vendorarch}/Devel/*.pm
+%doc COPYING Changes README
+%{perl_vendorarch}/Devel/FindRef.pm
 %dir %{perl_vendorarch}/auto/Devel/FindRef
-%{perl_vendorarch}/auto/Devel/FindRef/*.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Devel/FindRef/*.so
-%{_mandir}/man3/*
+%{perl_vendorarch}/auto/Devel/FindRef/FindRef.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Devel/FindRef/FindRef.so
+%{_mandir}/man3/Devel::FindRef.3pm*
