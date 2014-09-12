@@ -68,6 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING Changes README
 %{perl_vendorarch}/Devel/FindRef.pm
 %dir %{perl_vendorarch}/auto/Devel/FindRef
-%{perl_vendorarch}/auto/Devel/FindRef/FindRef.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Devel/FindRef/FindRef.so
 %{_mandir}/man3/Devel::FindRef.3pm*
