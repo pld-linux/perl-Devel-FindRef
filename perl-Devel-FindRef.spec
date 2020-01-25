@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests		# perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	FindRef
 Summary:	Devel::FindRef - where is that reference to my variable hiding?
