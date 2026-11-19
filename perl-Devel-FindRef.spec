@@ -7,13 +7,13 @@
 Summary:	Devel::FindRef - where is that reference to my variable hiding?
 Summary(pl.UTF-8):	Devel::FindRef - znajdowanie referecji do zmiennych
 Name:		perl-Devel-FindRef
-Version:	1.422
-Release:	8
+Version:	1.46
+Release:	1
 # same as perl 5.8.8 or later perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Devel/MLEHMANN/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	2c92401767653f1ba8b98f36f23fae8d
+Source0:	https://www.cpan.org/authors/id/M/ML/MLEHMANN/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	8604a165eac32259cc3a559afa0de2a7
 URL:		http://search.cpan.org/dist/Devel-FindRef/
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.1-13
